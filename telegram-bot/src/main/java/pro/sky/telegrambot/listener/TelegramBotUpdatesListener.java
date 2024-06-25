@@ -52,8 +52,12 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
                 if (matcher.matches()) {
                     String date = matcher.group(1);
                     String notificationText = matcher.group(3);
-                    LocalDateTime parseDateTime = LocalDateTime.parse(date, DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm"));
-                    Notification_task notification_task = new Notification_task(chat_id, notificationText, parseDateTime);
+                    LocalDateTime parseDateTime = LocalDateTime.parse(date,
+                            DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")
+                    );
+                    Notification_task notification_task = new Notification_task(
+                            chat_id, notificationText, parseDateTime
+                    );
 
                     messageText = addTask(notification_task);
                     telegramBot.execute(new SendMessage(chat_id, messageText));
@@ -80,8 +84,7 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
         } else {
             return "Такое напоминание уже существует!";
         }
-
-
     }
+
 
 }

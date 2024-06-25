@@ -9,7 +9,10 @@ import java.util.List;
 
 public interface RepositoryNotification_task extends JpaRepository<Notification_task, Long> {
 
-    List<Notification_task> findByChatIdAndMessageAndNotificationDateTime(Long chat_id, String message, LocalDateTime notificationDateTime);
+    List<Notification_task> findByChatIdAndMessageAndNotificationDateTime(Long chat_id,
+                                                                          String message,
+                                                                          LocalDateTime notificationDateTime
+    );
 
     @Query(value = "select * from notification_task where notification_date=date_trunc('minute',LOCALTIMESTAMP)"
             , nativeQuery = true)

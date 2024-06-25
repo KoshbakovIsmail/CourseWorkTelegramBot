@@ -20,4 +20,5 @@ public class Scheduled {
             telegramBot.execute(new SendMessage(curTask.getChatId(), curTask.getMessage()));
         }
     }
+
 }
