@@ -1,6 +1,5 @@
 -- liquibase formatted sql
-
--- changeset Koshbakov:1
+ -- changeset koshbakov:1
 CREATE TABLE public.notification_task
 (
 id bigint NOT NULL,
